@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Jersey 10 Font */
+@font-face {
+  font-family: 'Jersey 10';
+  src: url('/fonts/Jersey10-Regular.woff2') format('woff2'),
+       url('/fonts/Jersey10-Regular.woff') format('woff'),
+       url('/fonts/Jersey10-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     /* Warm cream palette inspired by Joddit */
@@ -93,13 +104,42 @@
     @apply border-border;
   }
 
+  html {
+    background: transparent;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
     font-family: var(--font-body);
+    background: transparent;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
+  }
+
+  /* Custom scrollbar styling */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #000 transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  
+
+  /* GradFlow canvas styling */
+  canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
   }
 }
 
@@ -125,6 +165,12 @@
 
   .blob-shape {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  .font-jersey {
+    font-family: 'Jersey 10', 'Arial Black', sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.05em;
   }
 }
 

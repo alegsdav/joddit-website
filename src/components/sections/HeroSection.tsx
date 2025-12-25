@@ -29,16 +29,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="text-center lg:text-left"
           >
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-accent/40 rounded-full px-4 py-2 mb-6"
-            >
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse-soft" />
-              <span className="text-sm font-medium text-foreground">Now with AI Transcription</span>
-            </motion.div>
+            
 
             {/* Heading */}
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.1] mb-6">

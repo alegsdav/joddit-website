@@ -12,7 +12,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="flex items-center gap-2"
           >
-            <span className="font-display text-2xl font-bold text-foreground">Joddit</span>
+            <span className="font-jersey text-2xl font-bold text-foreground">Joddit</span>
           </motion.div>
 
           {/* Links */}

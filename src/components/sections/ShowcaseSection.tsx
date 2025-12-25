@@ -47,7 +47,7 @@ const ShowcaseSection = () => {
                   <div className="absolute top-20 left-1/2 -translate-x-1/2 w-32 h-32 bg-secondary rounded-[40%_60%_70%_30%/40%_50%_60%_50%]" />
                   
                   <div className="relative z-10 mt-auto text-center pb-8">
-                    <h3 className="font-display text-3xl font-bold text-foreground mb-2">Joddit</h3>
+                    <h3 className="font-jersey text-3xl font-bold text-foreground mb-2">Joddit</h3>
                     <p className="text-xs text-muted-foreground mb-6">Capture your ideas as they happen.</p>
                     <div className="space-y-2">
                       <div className="bg-transparent border border-border rounded-full px-6 py-2 text-xs">Log In</div>

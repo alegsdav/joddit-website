@@ -12,7 +12,7 @@ const Header = () => {
       <div className="container mx-auto max-w-7xl">
         <div className="flex items-center justify-between bg-card/80 backdrop-blur-lg rounded-full px-6 py-3 shadow-soft border border-border/50">
           {/* Logo */}
-          <a href="/" className="font-display text-xl font-bold text-foreground">
+          <a href="/" className="font-jersey text-3xl font-bold text-foreground">
             Joddit
           </a>
 
