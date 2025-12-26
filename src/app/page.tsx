@@ -33,10 +33,10 @@ export default function Home() {
             color1: { r: 206, g: 145, b: 39 },
             color2: { r: 255, g: 255, b: 255 },
             color3: { r: 166, g: 166, b: 166 },
-            speed: 0.6,
-            scale: 2,
+            speed: 0.4,
+            scale: 1,
             type: 'smoke',
-            noise: 0.30
+            noise: 0.08
           }}
         />
       </div>
