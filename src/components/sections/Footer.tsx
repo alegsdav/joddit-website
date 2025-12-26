@@ -1,4 +1,7 @@
+'use client';
+
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -12,7 +15,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="flex items-center gap-2"
           >
-            <span className="font-jersey text-2xl font-bold text-foreground">Joddit</span>
+            <Link href="/" className="font-jersey text-2xl font-bold text-foreground">Joddit</Link>
           </motion.div>
 
           {/* Links */}

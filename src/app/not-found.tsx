@@ -1,14 +1,14 @@
-import { useLocation } from "react-router-dom";
+'use client';
+
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
-const NotFound = () => {
-  const location = useLocation();
-
+export default function NotFound() {
   useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
-  }, [location.pathname]);
+    console.error("404 Error: User attempted to access non-existent route");
+  }, []);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background">
@@ -18,14 +18,13 @@ const NotFound = () => {
           Oops! This page seems to have wandered off.
         </p>
         <Button asChild>
-          <a href="/">
+          <Link href="/">
             <ArrowLeft className="w-4 h-4" />
             Return to Home
-          </a>
+          </Link>
         </Button>
       </div>
     </div>
   );
-};
+}
 
-export default NotFound;

@@ -133,8 +133,6 @@
     background: transparent;
   }
 
-  
-
   /* GradFlow canvas styling */
   canvas {
     display: block;
@@ -187,3 +185,4 @@
     box-shadow: var(--shadow-elevated);
   }
 }
+

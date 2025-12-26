@@ -1,5 +1,8 @@
+'use client';
+
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -12,9 +15,9 @@ const Header = () => {
       <div className="container mx-auto max-w-7xl">
         <div className="flex items-center justify-between bg-card/80 backdrop-blur-lg rounded-full px-6 py-3 shadow-soft border border-border/50">
           {/* Logo */}
-          <a href="/" className="font-jersey text-3xl font-bold text-foreground">
+          <Link href="/" className="font-jersey text-3xl font-bold text-foreground">
             Joddit
-          </a>
+          </Link>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-8">

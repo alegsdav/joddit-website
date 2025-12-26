@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from "framer-motion";
 import FeatureCard from "@/components/FeatureCard";
 import { Mic, Users, Cloud, Folder, Sparkles, Lock } from "lucide-react";

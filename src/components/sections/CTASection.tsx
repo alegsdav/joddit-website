@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Apple, Smartphone } from "lucide-react";

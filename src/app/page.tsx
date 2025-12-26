@@ -1,4 +1,6 @@
-import { GradFlow } from "gradflow";
+'use client';
+
+import dynamic from "next/dynamic";
 import Header from "@/components/Header";
 import HeroSection from "@/components/sections/HeroSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
@@ -6,7 +8,11 @@ import ShowcaseSection from "@/components/sections/ShowcaseSection";
 import CTASection from "@/components/sections/CTASection";
 import Footer from "@/components/sections/Footer";
 
-const Index = () => {
+const GradFlow = dynamic(() => import("gradflow").then((mod) => mod.GradFlow), {
+  ssr: false,
+});
+
+export default function Home() {
   return (
     <main className="relative min-h-screen">
       <div 
@@ -48,6 +54,5 @@ const Index = () => {
       </div>
     </main>
   );
-};
+}
 
-export default Index;
