@@ -13,6 +13,24 @@
   font-display: swap;
 }
 
+/* Jersey 15 Font */
+@font-face {
+  font-family: 'Jersey 15';
+  src: url('/fonts/Jersey15-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Jersey 25 Font */
+@font-face {
+  font-family: 'Jersey 25';
+  src: url('/fonts/Jersey25-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     /* Warm cream palette inspired by Joddit */
@@ -167,6 +185,18 @@
 
   .font-jersey {
     font-family: 'Jersey 10', 'Arial Black', sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+  }
+
+  .font-jersey-15 {
+    font-family: 'Jersey 15', 'Arial Black', sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+  }
+
+  .font-jersey-25 {
+    font-family: 'Jersey 25', 'Arial Black', sans-serif;
     font-weight: normal;
     letter-spacing: 0.05em;
   }
