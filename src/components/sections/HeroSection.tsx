@@ -39,7 +39,7 @@ const HeroSection = () => {
     <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden py-32 md:py-40 px-4">
       {/* Background layer with scroll-based opacity - same color as other sections */}
       <div 
-        className="absolute inset-0 bg-[#e7e5db] transition-opacity duration-300 z-0"
+        className="absolute inset-0 bg-[#e7e5db] z-0"
         style={{ opacity: bgOpacity }}
       />
 

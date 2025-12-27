@@ -59,9 +59,9 @@ export default function Home() {
             color1: { r: 245, g: 158, b: 71 },
             color2: { r: 231, g: 229, b: 219 },
             color3: { r: 48, g: 49, b: 56 },
-            speed: 0.4,
+            speed: 0.3,
             scale: 1,
-            type: 'stripe',
+            type: 'smoke',
             noise: 0.08
           }}
         />
