@@ -88,7 +88,7 @@ const FeaturesSection = () => {
           <span className="inline-block text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
             Features
           </span>
-          <h2 className="font-jersey-25 text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-jersey-25 text-4xl md:text-5xl font-bold text-foreground mb-4 !leading-[.9]">
             The one thing you wish you had when you're in a rush
           </h2>
           <p className="text-lg text-muted-foreground">
