@@ -7,7 +7,6 @@ import HeroSection from "@/components/sections/HeroSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import ShowcaseSection from "@/components/sections/ShowcaseSection";
 import PricingSection from "@/components/sections/PricingSection";
-import CTASection from "@/components/sections/CTASection";
 import Footer from "@/components/sections/Footer";
 
 const GradFlow = dynamic(() => import("gradflow").then((mod) => mod.GradFlow), {
@@ -77,7 +76,6 @@ export default function Home() {
           <ShowcaseSection />
         </section>
         <PricingSection />
-        <CTASection />
         <Footer />
       </div>
     </main>

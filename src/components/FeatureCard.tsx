@@ -28,9 +28,10 @@ const FeatureCard = ({
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
+      viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative bg-card rounded-2xl p-6 md:p-8 shadow-soft hover:shadow-card transition-all duration-500"
+      className="group relative bg-card rounded-2xl p-6 md:p-8 shadow-soft hover:shadow-card transition-shadow duration-300 border"
+      style={{ borderColor: 'hsl(0, 0%, 10%)' }}
     >
       {/* Icon container */}
       <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl ${accentClasses[accentColor]} mb-5`}>

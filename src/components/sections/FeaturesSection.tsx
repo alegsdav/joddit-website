@@ -4,6 +4,27 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import FeatureCard from "@/components/FeatureCard";
 import { Mic, Users, Cloud, Folder, Sparkles, Lock } from "lucide-react";
+const SectionHeader = () => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.6 }}
+      className="text-center max-w-2xl mx-auto mb-16"
+    >
+      <span className="inline-block text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
+        Features
+      </span>
+      <h2 className="font-jersey-25 text-4xl md:text-5xl font-bold text-foreground mb-2 !leading-[.9]">
+        Made for the busy
+      </h2>
+      <p className="text-lg text-muted-foreground">
+        Start preserving your thoughts in seconds without any extra steps
+      </p>
+    </motion.div>
+  );
+};
 
 const FeaturesSection = () => {
   const [bgOpacity, setBgOpacity] = useState(0);
@@ -78,23 +99,7 @@ const FeaturesSection = () => {
       />
       <div className="relative container mx-auto max-w-7xl">
         {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-2xl mx-auto mb-16"
-        >
-          <span className="inline-block text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
-            Features
-          </span>
-          <h2 className="font-jersey-25 text-4xl md:text-5xl font-bold text-foreground mb-4 !leading-[.9]">
-            The one thing you wish you had when you're in a rush
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Powerful features wrapped in simplicity. Start recording your thoughts in seconds.
-          </p>
-        </motion.div>
+        <SectionHeader />
 
         {/* Features grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

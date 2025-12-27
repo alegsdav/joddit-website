@@ -18,7 +18,7 @@ const ShowcaseSection = () => {
           <span className="inline-block text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
             How it works
           </span>
-          <h2 className="font-jersey-25 text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-jersey-25 text-4xl md:text-5xl font-bold text-foreground mb-2">
             Simple. Intuitive. Beautiful.
           </h2>
           <p className="text-lg text-muted-foreground">
