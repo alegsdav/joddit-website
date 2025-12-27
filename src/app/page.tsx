@@ -1,10 +1,12 @@
 'use client';
 
+import { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import Header from "@/components/Header";
 import HeroSection from "@/components/sections/HeroSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import ShowcaseSection from "@/components/sections/ShowcaseSection";
+import PricingSection from "@/components/sections/PricingSection";
 import CTASection from "@/components/sections/CTASection";
 import Footer from "@/components/sections/Footer";
 
@@ -13,10 +15,34 @@ const GradFlow = dynamic(() => import("gradflow").then((mod) => mod.GradFlow), {
 });
 
 export default function Home() {
+  const [opacity, setOpacity] = useState(1);
+  const featuresRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!featuresRef.current) return;
+
+      const featuresTop = featuresRef.current.getBoundingClientRect().top;
+      const viewportHeight = window.innerHeight;
+
+      // Calculate opacity: fade from 1 to 0 as FeaturesSection approaches top of viewport
+      // Opacity should be 0 when featuresTop === 0 (FeaturesSection at top)
+      // Opacity should be 1 when featuresTop >= viewportHeight (FeaturesSection below viewport)
+      const scrollProgress = Math.max(0, Math.min(1, 1 - (featuresTop / viewportHeight)));
+      
+      setOpacity(1 - scrollProgress);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial calculation
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <main className="relative min-h-screen">
       <div 
-        className="fixed inset-0 -z-10" 
+        className="fixed inset-0 -z-10 transition-opacity duration-300" 
         style={{ 
           position: 'fixed',
           top: 0,
@@ -25,17 +51,18 @@ export default function Home() {
           bottom: 0,
           width: '100vw',
           height: '100vh',
-          zIndex: -10
+          zIndex: -10,
+          opacity: opacity
         }}
       >
         <GradFlow
           config={{
-            color1: { r: 206, g: 145, b: 39 },
-            color2: { r: 255, g: 255, b: 255 },
-            color3: { r: 166, g: 166, b: 166 },
+            color1: { r: 245, g: 158, b: 71 },
+            color2: { r: 231, g: 229, b: 219 },
+            color3: { r: 48, g: 49, b: 56 },
             speed: 0.4,
             scale: 1,
-            type: 'smoke',
+            type: 'stripe',
             noise: 0.08
           }}
         />
@@ -43,12 +70,13 @@ export default function Home() {
       <div className="relative z-10">
         <Header />
         <HeroSection />
-        <section id="features">
+        <section id="features" ref={featuresRef}>
           <FeaturesSection />
         </section>
         <section id="how-it-works">
           <ShowcaseSection />
         </section>
+        <PricingSection />
         <CTASection />
         <Footer />
       </div>

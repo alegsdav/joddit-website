@@ -5,7 +5,7 @@ import PhoneMockup from "@/components/PhoneMockup";
 
 const ShowcaseSection = () => {
   return (
-    <section className="py-24 px-4 overflow-hidden">
+    <section className="py-24 px-4 bg-[#e7e5db] overflow-hidden">
       <div className="container mx-auto max-w-7xl">
         {/* Section header */}
         <motion.div

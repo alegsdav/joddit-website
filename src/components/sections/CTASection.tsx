@@ -6,7 +6,7 @@ import { ArrowRight, Apple, Smartphone } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section className="py-24 px-4">
+    <section className="py-24 px-4 bg-[#e7e5db]">
       <div className="container mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}

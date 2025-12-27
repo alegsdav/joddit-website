@@ -1,10 +1,35 @@
 'use client';
 
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import FeatureCard from "@/components/FeatureCard";
 import { Mic, Users, Cloud, Folder, Sparkles, Lock } from "lucide-react";
 
 const FeaturesSection = () => {
+  const [bgOpacity, setBgOpacity] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+
+      const featuresTop = sectionRef.current.getBoundingClientRect().top;
+      const viewportHeight = window.innerHeight;
+
+      // Calculate opacity: fade from 0 to 1 as FeaturesSection approaches top of viewport
+      // This is the inverse of GradFlow fade (1 to 0)
+      // Opacity should be 1 when featuresTop === 0 (FeaturesSection at top)
+      // Opacity should be 0 when featuresTop >= viewportHeight (FeaturesSection below viewport)
+      const scrollProgress = Math.max(0, Math.min(1, 1 - (featuresTop / viewportHeight)));
+      
+      setBgOpacity(scrollProgress);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial calculation
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   const features = [
     {
       icon: <Mic className="w-6 h-6 text-foreground" />,
@@ -45,8 +70,13 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-secondary/30">
-      <div className="container mx-auto max-w-7xl">
+    <section ref={sectionRef} className="relative py-24 px-4">
+      {/* Background layer with scroll-based opacity */}
+      <div 
+        className="absolute inset-0 bg-[#e7e5db] transition-opacity duration-300"
+        style={{ opacity: bgOpacity }}
+      />
+      <div className="relative container mx-auto max-w-7xl">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -58,22 +88,11 @@ const FeaturesSection = () => {
           <span className="inline-block text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
             Features
           </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Everything you need to{" "}
-            <span className="relative inline-block">
-              capture
-              <motion.span 
-                className="absolute -bottom-1 left-0 h-3 w-full bg-highlight/40 -z-10"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5, duration: 0.4 }}
-              />
-            </span>{" "}
-            ideas
+          <h2 className="font-jersey-25 text-4xl md:text-5xl font-bold text-foreground mb-4">
+            The one thing you wish you had when you're in a rush
           </h2>
           <p className="text-lg text-muted-foreground">
-            Powerful features wrapped in simplicity. Start capturing your thoughts in seconds.
+            Powerful features wrapped in simplicity. Start recording your thoughts in seconds.
           </p>
         </motion.div>
 
